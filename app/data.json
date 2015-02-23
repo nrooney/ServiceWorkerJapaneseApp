@@ -1,0 +1,7 @@
+translations = [
+  {"english":"beer", "japanese":"ビル"}
+  {"english":"hello", "japanese":"こんにちわ"}
+  {"english":"see ya", "japanese":"じゃまたねー"}
+  {"english":"yakitori", "japanese":"焼鳥"}
+  {"english":"ok", "japanese":"大丈夫"}
+]

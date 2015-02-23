@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Japan Like a Pro</title>
+
+    <!-- Bootstrap -->
+    <link href="/app/css/dist/bootstrap.min.css" rel="stylesheet">
+    <link href="/app/css/app.css" rel="stylesheet">
+    <script src="/app/js/dist/angular.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-app="">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Japan like a Pro</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+    <div class="container" ng-init="translations = [
+          {english:'beer', japanese:'ビル'},
+          {english:'hello', japanese:'こんにちわ'},
+          {english:'see ya', japanese:'じゃまたねー'},
+          {english:'yakitori', japanese:'焼鳥'},
+          {english:'ok', japanese:'大丈夫'}
+        ]">
+
+
+      <!-- XHR  -->
+      <div>
+        <form>
+          <input id="searchterm" type="search"/>
+          <input type="submit" value="search" onclick="getNewTerm();" >
+        </form>
+        <p id="translation"></p>
+
+        <script>
+          function getNewTerm(){
+
+            var newScript = document.createElement('script'); //eh?
+            var sourceText = escape(document.getElementById("searchterm").value);
+            // escape?
+
+            var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCcyaSoVijGjqtQRtsH52dzZA8FdD_fuNM&source=en&target=ja&callback=translateText&q=' + sourceText;
+            newScript.src = source;
+          }
+
+          function translateText(response) {
+            console.log(response);
+
+            document.getElementById("translation").innerHTML += "<br>" + response.data.translations[0].translatedText;
+          }
+        </script>
+      </div>
+      <!-- END XHR  -->
+
+      <!-- INPUT BOX -->
+      <div>
+        <p>I have {{translations.length}} translations. They are:</p>
+
+        <input type="search" ng-model="q" placeholder="filter translations..." />
+      </div>
+      <!-- END INPUT BOX -->
+
+
+      <!-- BOXES -->
+      <div class="row" class="example-animate-container">
+        <div class="col-md-4" nclass="animate-repeat" ng-repeat="translation in translations | filter:q as results">  
+          <div class="translationbox">
+          [{{$index + 1}}] {{translation.english}} that is{{translation.japanese}}
+          </div>
+        </div>
+        <div class="animate-repeat" ng-if="results.length == 0">
+          <strong>No results found...</strong>
+        </div>
+      </div>
+      <!-- END BOXES -->
+      
+
+    </div><!-- /.container -->
+
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/app/js/dist/jquery-1.11.2.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/app/js/dist/bootstrap.min.js"></script>
+  </body>
+</html>

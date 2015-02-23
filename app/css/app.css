@@ -1,0 +1,15 @@
+body {
+  padding-top: 50px;
+  margin-top: 10px;
+}
+
+.col-md-4 {
+	background: #eee;
+	padding: 10px;
+}
+
+.translationbox {
+	padding: 10px;
+	background: #ccc;
+	border: 2px solid #000;
+}
