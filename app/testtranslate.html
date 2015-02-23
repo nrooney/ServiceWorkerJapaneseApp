@@ -3,10 +3,11 @@
     <title>Translate API Example</title>
   </head>
   <body>
-    <div id="sourceText">Hello world</div>
+    <div id="sourceText">beer please?</div>
     <div id="translation"></div>
     <script>
       function translateText(response) {
+        console.log(response);
         document.getElementById("translation").innerHTML += "<br>" + response.data.translations[0].translatedText;
       }
     </script>
