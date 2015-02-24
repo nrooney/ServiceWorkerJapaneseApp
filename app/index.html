@@ -10,6 +10,7 @@
     <link href="/app/css/dist/bootstrap.min.css" rel="stylesheet">
     <link href="/app/css/app.css" rel="stylesheet">
     <script src="/app/js/dist/angular.min.js"></script>
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -67,21 +68,35 @@
 
         <script>
           function getNewTerm(){
-
-            console.log('working');
-
-            var newScript = document.createElement('script'); //eh?
-            newScript.type = 'text/javascript';
-      
             var sourceText = escape(document.getElementById("searchterm").value);
-            // escape?
-
             var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCcyaSoVijGjqtQRtsH52dzZA8FdD_fuNM&source=en&target=ja&callback=translateText&q=' + sourceText;
-
             console.log("source" + source);
 
-            newScript.src = source;
-            document.getElementsByTagName('head')[0].appendChild(newScript);
+            jQuery.ajax({
+              url: source,
+              context: document.body
+            }).done(function(response) {
+              console.log("complete");
+              console.log(response);
+              document.getElementById("translation").innerHTML += "<br>" + response.data.translations[0].translatedText;
+            }).fail(function(e, f, g) {
+              console.log(e);
+              console.log(f);
+              console.log(g);
+            });
+
+          //   var newScript = document.createElement('script'); //eh?
+          //   newScript.type = 'text/javascript';
+      
+          //   var sourceText = escape(document.getElementById("searchterm").value);
+          //   // escape?
+
+          //   var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCcyaSoVijGjqtQRtsH52dzZA8FdD_fuNM&source=en&target=ja&callback=translateText&q=' + sourceText;
+
+          //   
+
+          //   newScript.src = source;
+          //   document.getElementsByTagName('head')[0].appendChild(newScript);
           }
 
           function translateText(response) {
