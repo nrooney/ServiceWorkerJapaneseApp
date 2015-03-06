@@ -14,6 +14,7 @@ A small and simple demo showing ServiceWorker code in an easy way for users to g
 * [Chang W Doh, ServiceWorker a new game change is coming](http://www.slideshare.net/cwdoh/serviceworker-new-game-changer-is-coming)
 * [Chromium Blog](http://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html)
 * [Jake Archibald, Using ServiceWorkers Today](http://jakearchibald.com/2014/using-serviceworker-today/)
+* [Jake Archibald, The Offline Cookbook](http://jakearchibald.com/2014/offline-cookbook/)
 
 ## Checking Spec
 
