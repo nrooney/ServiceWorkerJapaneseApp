@@ -11,10 +11,12 @@ A small and simple demo showing ServiceWorker code in an easy way for users to g
 ## Other Great ServiceWorker Demos / Tutorials / Slides
 
 * [HTML5Rocks, Service Worker Introduction](http://www.html5rocks.com/en/tutorials/service-worker/introduction/)
+* [Trained to Thrill](https://github.com/jakearchibald/trained-to-thrill): demo by Jake using cache polyfill
 * [Chang W Doh, ServiceWorker a new game change is coming](http://www.slideshare.net/cwdoh/serviceworker-new-game-changer-is-coming)
 * [Chromium Blog](http://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html)
 * [Jake Archibald, Using ServiceWorkers Today](http://jakearchibald.com/2014/using-serviceworker-today/)
 * [Jake Archibald, The Offline Cookbook](http://jakearchibald.com/2014/offline-cookbook/)
+* [Service Workers Explained](https://github.com/slightlyoff/ServiceWorker/blob/master/explainer.md)
 
 ## Checking Spec
 
@@ -22,6 +24,7 @@ A small and simple demo showing ServiceWorker code in an easy way for users to g
 * [Firefox]()
 * [Internet Explorer status.modern.ir](https://status.modern.ie/)
 * [CanIUse ServiceWorkers](http://caniuse.com/#feat=serviceworkers)
+* [Extensible Web Manifesto](https://extensiblewebmanifesto.org/)
 
 ## Related APIs
 
