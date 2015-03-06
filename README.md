@@ -5,8 +5,8 @@ A small and simple demo showing ServiceWorker code in an easy way for users to g
 ## Setup / Debugging
 
 * [Canary](https://www.google.co.uk/chrome/browser/canary.html)
-* [Chrome Flags](chrome://flags/): must be running chrome or canary
-* [ServiceWorker Internals](chrome://inspect/#service-workers)
+* Chrome Flags [chrome://flags/]: must be running chrome or canary
+* ServiceWorker Internals [chrome://inspect/#service-workers]
 
 ## Other Great ServiceWorker Demos / Tutorials / Slides
 
