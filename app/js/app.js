@@ -73,4 +73,4 @@ function setStorage(appData){
 	  });
 	}
 
-}()); //ask ada about this
+}()); 
