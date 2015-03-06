@@ -10,6 +10,7 @@
     <link href="/app/css/dist/bootstrap.min.css" rel="stylesheet">
     <link href="/app/css/app.css" rel="stylesheet">
     <script src="/app/js/dist/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
     
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -19,12 +20,12 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body ng-app="">
+  <body ng-app="Japanese">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" toggle="collapse" target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -46,64 +47,22 @@
 
 
 
-
-
-
-    <div class="container" ng-init="translations = [
-          {english:'beer', japanese:'ビル'},
-          {english:'hello', japanese:'こんにちわ'},
-          {english:'see ya', japanese:'じゃまたねー'},
-          {english:'yakitori', japanese:'焼鳥'},
-          {english:'ok', japanese:'大丈夫'}
-        ]">
+    <div class="container" data-ng-controller="TranslationController">
 
 
       <!-- XHR  -->
       <div>
-        <form>
+        <form name="findTermForm" ng-controller="findTermFormCtrl" ng-submit="submit()">
           <input id="searchterm" type="search"/>
-          <input type="submit" value="search" onclick="getNewTerm();" >
+          <input type="submit" value="search">
         </form>
         <p id="translation"></p>
 
         <script>
-          function getNewTerm(){
-            var sourceText = escape(document.getElementById("searchterm").value);
-            var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCcyaSoVijGjqtQRtsH52dzZA8FdD_fuNM&source=en&target=ja&callback=translateText&q=' + sourceText;
-            console.log("source" + source);
+        
 
-            jQuery.ajax({
-              url: source,
-              context: document.body
-            }).done(function(response) {
-              console.log("complete");
-              console.log(response);
-              document.getElementById("translation").innerHTML += "<br>" + response.data.translations[0].translatedText;
-            }).fail(function(e, f, g) {
-              console.log(e);
-              console.log(f);
-              console.log(g);
-            });
+          
 
-          //   var newScript = document.createElement('script'); //eh?
-          //   newScript.type = 'text/javascript';
-      
-          //   var sourceText = escape(document.getElementById("searchterm").value);
-          //   // escape?
-
-          //   var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCcyaSoVijGjqtQRtsH52dzZA8FdD_fuNM&source=en&target=ja&callback=translateText&q=' + sourceText;
-
-          //   
-
-          //   newScript.src = source;
-          //   document.getElementsByTagName('head')[0].appendChild(newScript);
-          }
-
-          function translateText(response) {
-            console.log(response);
-
-            document.getElementById("translation").innerHTML += "<br>" + response.data.translations[0].translatedText;
-          }
         </script>
       </div>
       <!-- END XHR  -->
@@ -112,14 +71,14 @@
       <div>
         <p>I have {{translations.length}} translations. They are:</p>
 
-        <input type="search" ng-model="q" placeholder="filter translations..." />
+        <input type="search" data-ng-model="q" placeholder="filter translations..." />
       </div>
       <!-- END INPUT BOX -->
 
 
       <!-- BOXES -->
       <div class="row" class="example-animate-container">
-        <div class="col-md-4" nclass="animate-repeat" ng-repeat="translation in translations | filter:q as results">  
+        <div class="col-md-4" nclass="animate-repeat" data-ng-repeat="translation in translations | filter:q as results">  
           <div class="translationbox">
             <!-- {{$index + 1}} -->
             <h3 class="english">{{translation.english}}</h3>
@@ -127,7 +86,7 @@
           </div>
         </div>
 
-        <div class="animate-repeat" ng-if="results.length == 0">
+        <div class="animate-repeat" data-ng-if="results.length == 0">
           <strong>No results found...</strong>
         </div>
 
@@ -146,6 +105,7 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/app/js/dist/jquery-1.11.2.min.js"></script>
+    <script src="/app/js/app.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/app/js/dist/bootstrap.min.js"></script>
   </body>

@@ -1,7 +1,32 @@
-translations = [
-  {"english":"beer", "japanese":"ビル"}
-  {"english":"hello", "japanese":"こんにちわ"}
-  {"english":"see ya", "japanese":"じゃまたねー"}
-  {"english":"yakitori", "japanese":"焼鳥"}
-  {"english":"ok", "japanese":"大丈夫"}
+[
+  {"english":"beer", "japanese":"ビル"},
+  {"english":"hello", "japanese":"こんにちわ"},
+  {"english":"see ya", "japanese":"じゃまたねー"},
+  {"english":"yakitori", "japanese":"焼鳥"},
+  {"english":"ok", "japanese":"大丈夫"},
+  {"english":"where is the station", "japanese":"駅はどこですか"},
+  {"english":"this is delicous!", "japanese":"これはおいしい！"},
+  {"english":"Welcome", "japanese":"ようこそ"},
+  {"english":"Hello", "japanese":"今日は"},
+  {"english":"How are you?", "japanese":"お元気ですか？ "},
+  {"english":"Long time no see", "japanese":"久しぶり"},
+  {"english":"What's your name?", "japanese":"お名前はなんですか?"},
+  {"english":"Where are you from?", "japanese":"出身はどこですか？"},
+  {"english":"Pleased to meet you", "japanese":"初めまして "},
+  {"english":"Morning greeting", "japanese":"お早うございます"},
+  {"english":"Evening greeting", "japanese":"今晩は"},
+  {"english":"Good night", "japanese":"おやすみなさい "},
+  {"english":"Thank you", "japanese":"ありがとうございます"},
+  {"english":"Where's the toilet?", "japanese":"トイレはどこですか "},
+  {"english":"Do you understand?", "japanese":"わかりますか "},
+  {"english":"I understood", "japanese":"わかりました "},
+  {"english":"Please speak more slowly", "japanese":"ゆっくり言ってください "},
+  {"english":"Do you speak japanese?", "japanese":"日本語は話せますか"},
+  {"english":"Yes I can speak", "japanese":"はい、話せます "},
+  {"english":"What did you say?", "japanese":"なんて言いましたか "},
+  {"english":"I'd like to reserve a table", "japanese":"テーブルの予約を取りたいのですが"},
+  {"english":"Can I see the wine list?", "japanese":"ワインのリストを見せて頂けませんか"},
+  {"english":"I am a vegetarian", "japanese":"私は菜食主義者です"},
+  {"english":"Help!", "japanese":"助けて!"},
+  {"english":"My hovercraft is full of eels", "japanese":"私のホバークラフトは鰻でいっぱいです"}
 ]
